@@ -1,0 +1,31 @@
+.blogContainer {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.link {
+  font-size: 1.7rem;
+  display: inline-block;
+  margin-bottom: 1rem;
+  & svg {
+    margin-right: 0.5rem;
+    width: 1em;
+    margin-bottom: -3px;
+  }
+}
+
+.scrollToTop {
+  cursor: pointer;
+  margin-top: 5rem;
+  background-color: royalblue;
+  border: none;
+  font-size: 2rem;
+  color: white;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  & svg {
+    margin-left: 0.5rem;
+    width: 1em;
+    margin-bottom: -3px;
+  }
+}

@@ -3,11 +3,11 @@ import path from 'path';
 import * as matter from 'gray-matter';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import Link from 'next/link';
 import { postFilePaths, postsPath } from '../utils/mdxUtils';
 import HeroSection from '../components/home/HeroSection';
 import TagFilter from '../components/blog/TagFilter';
 import BlogList from '../components/blog/BlogList';
+import Pagination from '../components/Pagination';
 
 export default function Home({ posts }) {
   const postPerPage = 3;
@@ -59,24 +59,7 @@ export default function Home({ posts }) {
         setSelectedTag={setSelectedTag}
       />
       <BlogList posts={filteredPosts} />
-
-      <div className="pagination">
-        <h3 className="pagination_heading">
-          page {router.query.page || 1} out of {totalPages}
-        </h3>
-        <div className="paginateLinks_container">
-          {currentPage > 1 && (
-            <Link href={`/?page=${currentPage - 1}`}>
-              <a className="paginateLinks">Prev</a>
-            </Link>
-          )}
-          {currentPage < totalPages && (
-            <Link href={`/?page=${currentPage + 1}`}>
-              <a className="paginateLinks">Next</a>
-            </Link>
-          )}
-        </div>
-      </div>
+      <Pagination currentPage={currentPage} totalPages={totalPages} />
     </>
   );
 }

@@ -1,8 +1,10 @@
 import clsx from 'clsx';
+import { useRouter } from 'next/router';
 import React from 'react';
 import classes from './TagFilter.module.scss';
 
 function TagFilter({ tags, selectedTag, setSelectedTag, className }) {
+  const router = useRouter();
   return (
     <div className={clsx(classes.container, className)}>
       {tags.map((tag) => (
@@ -13,7 +15,10 @@ function TagFilter({ tags, selectedTag, setSelectedTag, className }) {
             classes.tagButton,
             selectedTag === tag && classes.selected
           )}
-          onClick={() => setSelectedTag(tag)}
+          onClick={() => {
+            setSelectedTag(tag);
+            router.push('/');
+          }}
         >
           {tag}
         </button>

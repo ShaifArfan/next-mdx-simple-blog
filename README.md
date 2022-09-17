@@ -1,3 +1,6 @@
-Add pagination with next.js & mdx blog
-- https://blog.devgenius.io/adding-pagination-into-next-js-blog-685d04dcb2c1
+## Next.js + MDX Blog website.
 
+- Next.js
+- next-mdx-remote
+- pagination for blog list
+- code highlighting with rehype-highlight

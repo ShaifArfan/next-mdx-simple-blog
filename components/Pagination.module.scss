@@ -1,0 +1,20 @@
+.pagination {
+  margin-top: 2rem;
+}
+.pagination_heading {
+  font-size: 1.8rem;
+  text-align: center;
+}
+.paginateLinks_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+}
+.paginateLinks {
+  padding: 1rem;
+  background: transparent;
+  border: 1px solid white;
+  display: inline-block;
+  font-size: 1.8rem;
+}

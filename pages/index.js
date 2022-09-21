@@ -3,7 +3,7 @@ import path from 'path';
 import * as matter from 'gray-matter';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import { postFilePaths, postsPath } from '../utils/mdxUtils';
+import { postFileNames, postsPath } from '../utils/mdxUtils';
 import HeroSection from '../components/home/HeroSection';
 import TagFilter from '../components/blog/TagFilter';
 import BlogList from '../components/blog/BlogList';
@@ -65,9 +65,9 @@ export default function Home({ posts }) {
 }
 
 export async function getStaticProps() {
-  const posts = postFilePaths.map((slug) => {
-    const filePath = fs.readFileSync(path.join(postsPath, `${slug}`));
-    const { data } = matter(filePath);
+  const posts = postFileNames.map((slug) => {
+    const content = fs.readFileSync(path.join(postsPath, `${slug}`));
+    const { data } = matter(content);
     return {
       frontmatter: data,
       slug: slug.replace(/\.mdx?$/, ''),

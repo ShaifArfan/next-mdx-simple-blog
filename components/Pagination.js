@@ -7,9 +7,9 @@ function Pagination({ totalPages, currentPage }) {
   const router = useRouter();
   return (
     <div className={classes.pagination}>
-      <h3 className={classes.pagination_heading}>
+      <p className={classes.pagination_heading}>
         page {router.query.page || 1} out of {totalPages}
-      </h3>
+      </p>
       <div className={classes.paginateLinks_container}>
         {currentPage > 1 && (
           <Link href={`/?page=${currentPage - 1}`}>

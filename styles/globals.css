@@ -39,8 +39,8 @@ pre {
 }
 
 code:not(pre) {
-  background: #31425e;
-  color: #a7aab0;
+  background: #2f405b;
+  color: #d3d3d5;
   padding: 0.3rem;
   border-radius: 4px;
 }

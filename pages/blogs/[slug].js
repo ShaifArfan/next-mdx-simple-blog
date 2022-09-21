@@ -4,7 +4,7 @@ import fs from 'fs';
 import { serialize } from 'next-mdx-remote/serialize';
 import matter from 'gray-matter';
 import rehypeHighlight from 'rehype-highlight';
-import { postFilePaths, postsPath } from '../../utils/mdxUtils';
+import { postFileNames, postsPath } from '../../utils/mdxUtils';
 import SingleBlog from '../../components/blog/SingleBlog';
 
 export default function SingleBlogPage({ ...props }) {
@@ -31,7 +31,7 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  const postsPaths = postFilePaths.map((slug) => ({
+  const postsPaths = postFileNames.map((slug) => ({
     params: {
       slug: slug.replace(/\.mdx?$/, ''),
     },

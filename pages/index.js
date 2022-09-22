@@ -25,24 +25,23 @@ export default function Home({ posts }) {
   allTagsArr.unshift('all');
 
   useEffect(() => {
-    const page = parseInt(router.query.page, 10) || 1;
     let tempPosts = [...posts];
     if (selectedTag && selectedTag !== 'all') {
       tempPosts = posts.filter((post) =>
         post.frontmatter.tags.includes(selectedTag)
       );
     }
-    if (router.query) {
-      setCurrentPage(page || 1);
-      const start = (page - 1) * postPerPage;
-      const end =
-        start + postPerPage > posts.length - 1
-          ? posts.length
-          : start + postPerPage;
-      const paginatedPosts = tempPosts.slice(start, end);
-      setFilteredPosts(paginatedPosts);
-      setCurrentPage(page);
-    }
+    // if (router.query) {
+    const page = parseInt(router.query.page, 10) || 1;
+    setCurrentPage(page);
+    const start = (page - 1) * postPerPage;
+    const end =
+      start + postPerPage > posts.length - 1
+        ? posts.length
+        : start + postPerPage;
+    const paginatedPosts = tempPosts.slice(start, end);
+    setFilteredPosts(paginatedPosts);
+    // }
   }, [selectedTag, posts, router]);
 
   const totalPages =

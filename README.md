@@ -11,7 +11,7 @@ A simple blog website using Next.js, MDX.
 - code highlighting with rehype-highlight
 
 **live preview: [https://next-mdx-simple-blog.netlify.app/](https://next-mdx-simple-blog.netlify.app/)**<br>
-**youtube-tutorial: [https://youtu.be/-3qRsQvFH9I](https://youtu.be/-3qRsQvFH9I)**<br>
+**youtube-tutorial: [https://youtu.be/hpSubvgSvxo](https://youtu.be/hpSubvgSvxo)**<br>
 
 ---
 
